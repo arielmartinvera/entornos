@@ -12,8 +12,16 @@ package cuentas;
  */
 public class CCuenta {
 
+    
+ /**
+ * @version 01
+ */
+ /**
+  * @since 02
+  
+  */
     /**
-     * @return the nombre
+     * @return devuelve el valor de nombre
      */
     public String getNombre() {
         return nombre;
@@ -84,17 +92,31 @@ public class CCuenta {
         cuenta=cue;
         saldo=sal;
     }
-
+/**
+ * 
+ * @return devuelve el saldo para saber el estado
+ */
     public double estado()
     {
         return getSaldo();
-    }public void ingresar(double cantidad) throws Exception
+    }
+    
+    /**
+     * 
+     * @param cantidad evalua el dato de este parametro
+     * @throws Exception para cantidades negativas de ingreso
+     */
+    public void ingresar(double cantidad) throws Exception
     {
         if (cantidad<0)
             throw new Exception("No se puede ingresar una cantidad negativa");
         setSaldo(getSaldo() + cantidad);
     }
-
+/**
+ * 
+ * @param cantidad
+ * @throws Exception para cantidades negativas a retirar o mayores al saldo disponible
+ */
     public void retirar(double cantidad) throws Exception
     {
         if (cantidad <= 0)
